@@ -5,13 +5,16 @@
   <thead>
   <tr>
     <th>Name</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
   <% @patients.each do |patient| %>
     <tr>
       <td><%= link_to full_name(patient), patient %></td>
+      <td><%= link_to "Delete", patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
+
   <% end %>
   </tbody>
 </table>
